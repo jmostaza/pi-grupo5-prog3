@@ -5,4 +5,23 @@
     border-radius: 10px;
     padding: 20px;
     background-color: rgb(176, 166, 158);
+    max-width: 20%;
+
+}
+
+.more {
+    cursor: pointer;
+}
+
+.extra{
+    display: flex;
+
+}
+
+.extra.hidden {
+    display: none;
+}
+.imagen{
+    width: 100%;
+
 }

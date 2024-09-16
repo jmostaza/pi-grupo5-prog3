@@ -5,9 +5,11 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
+    width: 100%;
 
 }
 .caja{
     background-color: rgba(0, 0, 0, 0.578);
+    max-width: 100%;
 }
 .title{color: white;}

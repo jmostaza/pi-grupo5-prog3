@@ -1,0 +1,15 @@
+.header {
+    background-color: red;
+    display: flex;
+    flex-direction: row;
+
+}
+.logo {
+    width: 20%;
+    border-radius: 50px;
+
+}
+
+.linkClass {
+    color: white;
+}

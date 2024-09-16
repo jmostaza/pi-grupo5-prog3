@@ -1,0 +1,13 @@
+.popularesGrid{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+
+}
+.caja{
+    background-color: rgba(0, 0, 0, 0.578);
+}
+.title{color: white;}

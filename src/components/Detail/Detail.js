@@ -17,6 +17,14 @@ class Detail extends Component {
     }
     render() {
          // ESTO DE LOADING ES DE PERSONA 2
+         const { movie } = this.props
+        if (!movie) {
+            return (
+            <div 
+            className="loader">Loading...
+            </div>
+            )
+        }
 
         const { title, overview, poster_path, genres, release_date,popularity, runtime } = this.props.movie
         return (

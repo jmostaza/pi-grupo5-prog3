@@ -1,4 +1,5 @@
 import {Component} from "react"
+import { withRouter } from "react-router-dom";
 
 
 class HomeForm extends Component {
@@ -8,9 +9,9 @@ class HomeForm extends Component {
             query: ""
         }
     }
-    handleCancelSubmit (event) {
-        event.preventDefault();
-    }
+    // handleCancelSubmit (event) {
+    //     event.preventDefault();
+    // }
 
     handleFormChange(event) {
         this.setState({
@@ -18,13 +19,13 @@ class HomeForm extends Component {
         })
     }
     handleFormSubmit() {
-        // this.props.history.push("/search", { query: this.state.query });
+        this.props.history.push("/SearchResults", { query: this.state.query });
     }
     
     render(){
         return(
             <div>
-                <form onSubmit={(event) => this.handleCancelSubmit(event)}>
+                <form >
                 <input 
                     onChange={(event) => this.handleFormChange(event)}
                     name="query"
@@ -39,4 +40,4 @@ class HomeForm extends Component {
 
 }
 
-export default HomeForm;
+export default withRouter(HomeForm);

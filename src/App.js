@@ -11,6 +11,7 @@ function App() {
       <Header />
       <Switch>
         <Route exact path='/' component={Home} />
+        
         <Route path="" component={NotFound} />
       </Switch>
       <Footer />

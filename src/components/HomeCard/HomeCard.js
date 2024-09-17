@@ -1,16 +1,23 @@
 import "./HomeCard.css"
 import { Component } from "react"
 import { Link } from "react-router-dom"
+import { FaHeart } from "react-icons/fa";
+import { FaRegHeart } from "react-icons/fa";
 
 class HomeCard extends Component {
     constructor(props){
         super(props)
         this.state= {
             showMore: false,
-            favorite: false
+            favorite: false,
         }
     }
 
+    handleFavorite() {
+        this.setState({
+            favorite: !this.state.favorite
+        })
+    }
     
     
     render(){
@@ -26,8 +33,11 @@ class HomeCard extends Component {
             <section className={this.state.showMore ? "extra" : "extra hidden"}>
                 <p>{overview}</p>
             </section>}
+            
             <Link to={`/movies/${id}`}><button>Detalle</button></Link>
-            <i className="fa-regular fa-heart"></i>
+            
+            {<div className="heart" onClick={()=> this.handleFavorite()} > {this.state.favorite ?  <FaHeart size={15} /> : <FaRegHeart /> }</div>}
+
          </article>
         )
     }

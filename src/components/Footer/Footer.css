@@ -1,6 +1,9 @@
 .footer {
-    background-color: red;
-    color:aliceblue;
-    
-
+    background-color: rgb(33, 33, 33); 
+    color: aliceblue; 
+    padding: 25px; 
+    text-align: center; 
+    border-top: 2px solid #b30000; 
+    font-family: 'Roboto', sans-serif; 
+    font-size: 14px; 
 }

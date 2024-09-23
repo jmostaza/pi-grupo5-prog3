@@ -19,7 +19,7 @@ class HomeForm extends Component {
         })
     }
     handleFormSubmit() {
-        this.props.history.push("/SearchResults", { query: this.state.query });
+        this.props.history.push("/searchresults", { query: this.state.query });
     }
     
     render(){

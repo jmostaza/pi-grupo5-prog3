@@ -1,7 +1,6 @@
 import "./Detail.css"
 import { Component } from "react";
-import { FaHeart } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+import FavoriteIcon from "../FavoriteIcon/FavoriteIcon";
 class Detail extends Component {
     constructor(props) {
         super(props)
@@ -26,7 +25,7 @@ class Detail extends Component {
             )
         }
 
-        const { title, overview, poster_path, genres, release_date,popularity, runtime } = this.props.movie
+        const { title, overview, poster_path, genres, release_date,popularity, runtime, id } = this.props.movie
         return (
             <div className="contenedorPrinc">
                 <div className="box-div">
@@ -39,7 +38,7 @@ class Detail extends Component {
                             <li>Estreno: {release_date}</li>
                             <li>Rating: {popularity}</li>
                             <li>Duracion: {runtime}min</li>
-                            {<li className="heart" onClick={()=> this.handleFavorite()} > {this.state.favorite ?  <FaHeart size={15} /> : <FaRegHeart /> }</li>}
+                            <li> <FavoriteIcon id={Number(id)}/></li>
                             </ul>
                     </div>
 

@@ -1,8 +1,8 @@
 import "./HomeCard.css"
 import { Component } from "react"
 import { Link } from "react-router-dom"
-import { FaHeart } from "react-icons/fa";
-import { FaRegHeart } from "react-icons/fa";
+import FavoriteIcon from "../FavoriteIcon/FavoriteIcon";
+
 
 class HomeCard extends Component {
     constructor(props){
@@ -12,10 +12,44 @@ class HomeCard extends Component {
             favorite: false,
         }
     }
+    componentDidMount(){
+        const storage= localStorage.getItem('favorites')
+        if(storage !== null){
+            const parsedFavorite = JSON.parse(storage)
+            const esFavorito= parsedFavorite.includes(this.props.movies.id)
+            if(esFavorito){
+                this.setState({
+                    favorite:true
+                })
+            }
+        }
+    }
 
     handleFavorite() {
+        const storage= localStorage.getItem('favorites')
+        if(storage !== null){
+            const parsedFavorite = JSON.parse(storage)
+            parsedFavorite.push(this.props.movies.id)
+            const stringFavorite= JSON.stringify(parsedFavorite)
+            localStorage.setItem('favorites', stringFavorite)
+        }
+        else{
+            const firstFavorite= [this.props.movies.id]
+            const stringFavorite= JSON.stringify(firstFavorite)
+            localStorage.setItem('favorites', stringFavorite)
+        }
         this.setState({
-            favorite: !this.state.favorite
+            favorite: true
+        })
+    }
+    quitarFavorite(){
+        const storage= localStorage.getItem('favorites')
+        const parsedFavorite= JSON.parse(storage)
+        const quitar= parsedFavorite.filter(id=> id !== this.props.movies.id)
+        const stringFavorite= JSON.stringify(quitar)
+        localStorage.setItem('favorites', stringFavorite)
+        this.setState({
+            favorite: false
         })
     }
     
@@ -36,7 +70,7 @@ class HomeCard extends Component {
             
             <Link to={`/movies/${id}`}><button>Detalle</button></Link>
             
-            {<div className="heart" onClick={()=> this.handleFavorite()} > {this.state.favorite ?  <FaHeart size={15} /> : <FaRegHeart /> }</div>}
+            <FavoriteIcon id={id}/>
 
          </article>
         )

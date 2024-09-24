@@ -1,5 +1,5 @@
 import React from "react";
-
+import "./SearchResultsGrid.css"
 import HomeCard from "../HomeCard/HomeCard";
 import { Component } from "react";
 

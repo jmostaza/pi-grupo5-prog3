@@ -11,13 +11,7 @@
     border-radius: 50px;
     background-color: rgb(33,33,33);
     border-color: red;
+    color: white;
     
 }
 
-.title-form {
-    font-size: 28px;
-    font-weight: 700;
-    font-family: 'Roboto', sans-serif;
-    margin: 20px;
-    color: #e0e0e0;
-}

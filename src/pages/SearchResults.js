@@ -1,10 +1,10 @@
 import { Component } from "react";
 import SearchResultsGrid from "../components/SearchResultsGrid/SearchResultsGrid";
+import Loader from "../components/Loader/Loader";
 
 class SearchResults extends Component {
     constructor(props) {
         super(props);
-
         this.state = {
             movies: [],
             cargando: true,
@@ -28,14 +28,19 @@ class SearchResults extends Component {
     }
 
     render() {
+        const { movies } = this.state;
         return (
             <div>
-                {this.state.cargando ? (
-                    <p style={{ color: "white" }}>Cargando...</p>
-                ) : (
-                    <SearchResultsGrid movies={this.state.movies} />
-                )}
-            </div>
+            {this.state.cargando ? (
+               <Loader/>
+            ) : (
+                this.state.movies && this.state.movies.length > 0 ? (
+                    <SearchResultsGrid movies={movies} />
+            ): (
+                <div className="cajaNoDisp"> <p className="NoDisponible">   NO HAY PELICULAS DISPONIBLES PARA TU BUSQUEDA </p></div>
+               
+            ))}
+        </div>
         );
     }
 }

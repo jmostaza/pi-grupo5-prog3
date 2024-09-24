@@ -26,7 +26,7 @@ class Favorite extends Component{
     render(){
         return(
               <div>
-                <h1 style={{color: 'white'}} >Favoritos</h1>
+                <h1 className="title" >Favoritos</h1>
                 {this.state.movies.length=== 0 ?(<p className="pFav">No hay peliculas en favoritos</p>) :
                 ( <section className="popularesGrid">
                     {this.state.movies.map(movies => (

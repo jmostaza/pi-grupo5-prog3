@@ -27,7 +27,6 @@ class HomeGrid extends Component {
         const { movies } = this.state
         const maxMovies = 5
         const filteredMovies = movies.filter((movie, idx) => idx < maxMovies);
-        console.log(movies);
 
 
         return(

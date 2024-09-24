@@ -40,3 +40,21 @@
     color: #b30000;
     text-decoration: none;
 }
+
+/* responsive: */
+@media(max-width: 460px ) {
+    .header{
+        max-width: 100%;
+    }
+    .linkClass{
+        font-size: small;
+        padding: 5px;
+    }
+    .logo{
+        width: 30%;
+        margin:0px;
+    }
+    nav{
+        flex-wrap: wrap;
+    }
+}

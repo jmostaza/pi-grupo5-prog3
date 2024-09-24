@@ -1,6 +1,6 @@
 import {Component} from "react"
 import { withRouter } from "react-router-dom";
-
+import "./HomeForm.css"
 
 class HomeForm extends Component {
     constructor(props) {
@@ -9,29 +9,29 @@ class HomeForm extends Component {
             query: ""
         }
     }
-    // handleCancelSubmit (event) {
-    //     event.preventDefault();
-    // }
 
     handleFormChange(event) {
         this.setState({
             query: event.target.value
         })
     }
-    handleFormSubmit() {
+    handleFormSubmit(e) {
+        e.preventDefault();
         this.props.history.push("/searchresults", { query: this.state.query });
     }
     
     render(){
         return(
             <div>
-                <form >
+                <form className="search-container">
                 <input 
                     onChange={(event) => this.handleFormChange(event)}
                     name="query"
                     value= {this.state.query}
+                    placeholder="Ingresá una pelicula"
+                    className="input-form"
                 />
-                <button onClick={() => this.handleFormSubmit()}>Search</button>
+                <button onClick={(e) => this.handleFormSubmit(e)}>Search</button>
                 </form>
             </div>
         )

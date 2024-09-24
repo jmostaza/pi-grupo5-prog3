@@ -5,7 +5,7 @@ const Cartelera = () => {
     return (
         <>
             <HomeForm/>
-            <MoviesGrid url="https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=31e421d77201e7a1eefe33f85b67fa3b" title="Peliculas en Cartelera"/>
+            <MoviesGrid url="https://api.themoviedb.org/3/movie/now_playing?language=en-US&api_key=31e421d77201e7a1eefe33f85b67fa3b&page=" title="Peliculas en Cartelera"/>
         </>
     )
 

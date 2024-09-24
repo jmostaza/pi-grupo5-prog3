@@ -1,6 +1,7 @@
 import "./HomeGrid.css"
 import { Component } from "react"
 import HomeCard from "../HomeCard/HomeCard"
+import { Link } from "react-router-dom"
 
 
 class HomeGrid extends Component {
@@ -38,7 +39,7 @@ class HomeGrid extends Component {
                 {filteredMovies.map((movies, idx) => { return <HomeCard key={idx} movies={movies}/>})}
             </section>
             </div>
-            
+            <Link to={`${this.props.boton}`}><button>Ver todas</button></Link>
             </>
            
         )
